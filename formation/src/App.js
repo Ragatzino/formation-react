@@ -1,26 +1,19 @@
-import React, {Component} from 'react';
-import './App.css';
-
-class App extends Component{
-  render (){
-    return(
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {this.props}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import React from "react";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import {Accueil, Header,About,Topics,Menu} from 'Components'
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Header />
+        <Menu/>
+        <Route exact path="/" component={Accueil} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+        <Route path="/menu" component={Menu} />
+      </div>
+    </Router>
   );
 }
 
-export default App;
+
