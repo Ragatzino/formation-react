@@ -68,19 +68,6 @@ export default function Menu() {
           <Typography variant="h3" color="inherit">
             PoneyFindr
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Recherchez votre poney"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-              inputProps={{ "aria-label": "Search" }}
-            />
-          </div>
         </Toolbar>
       </AppBar>
     </div>

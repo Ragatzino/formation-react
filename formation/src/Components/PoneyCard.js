@@ -5,19 +5,26 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
+import DeleteIcon from "@material-ui/icons/Delete";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    marginBottom: 10,
+    marginLeft: 10,
+    display: "inline"
   },
   media: {
     height: 140
+  },
+  fab: {
+    float: "right"
   }
 });
 
-export default function PoneyCard() {
+export default function PoneyCard(checked) {
   const classes = useStyles();
 
   return (
@@ -39,12 +46,11 @@ export default function PoneyCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        {if (checked) {<Fab variant="contained" color="primary" className={classes.fab}>})}
+        <DeleteIcon className={classes.rightIcon} />
+      </Fab>
+        
+        )}
       </CardActions>
     </Card>
   );
