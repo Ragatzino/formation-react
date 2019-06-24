@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Link, Route} from "react-router-dom";
-import {Topic} from "./Components"
+import { BrowserRouter as Link, Route } from "react-router-dom";
+import { Topic } from "./Components";
 export default function Topics({ match }) {
   return (
     <div>
@@ -24,5 +24,3 @@ export default function Topics({ match }) {
     </div>
   );
 }
-
-  

@@ -1,19 +1,34 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { makeStyles } from "@material-ui/core/styles";
 
-export default function Header() {
-    return (
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-      </ul>
-    );
+export const imgurl =
+  "https://vignette.wikia.nocookie.net/mlpfimroleplay/images/0/0e/Community-header-background/revision/latest?cb=20170613202503}";
+const useStyles = makeStyles(theme => ({
+  img: {
+    display: "block",
+    minWidth: "1%",
+    minHeight: "1%",
+    position: "relative"
+  },
+  div: {
+    backgroundImage: `url(${imgurl})`,
+    backgroundRepeat: "repeat-x",
+    animation: "slide 60s linear infinite"
   }
-  
+}));
+export default function Header() {
+  const classes = useStyles();
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <div fluid className={classes.div}>
+        <img
+          src="https://vignette.wikia.nocookie.net/mlpfimroleplay/images/0/0e/Community-header-background/revision/latest?cb=20170613202503"
+          alt=":)"
+          className={classes.img}
+        />
+      </div>
+    </React.Fragment>
+  );
+}
