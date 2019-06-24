@@ -24,6 +24,15 @@ const useStyles = makeStyles({
   }
 });
 
+const deleteButton = (checked, classes) => {
+  if (checked) {
+    return (
+      <Fab variant="contained" color="primary" className={classes.fab}>
+        <DeleteIcon className={classes.rightIcon} />
+      </Fab>
+    );
+  }
+};
 export default function PoneyCard(checked) {
   const classes = useStyles();
 
@@ -45,13 +54,7 @@ export default function PoneyCard(checked) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        {if (checked) {<Fab variant="contained" color="primary" className={classes.fab}>})}
-        <DeleteIcon className={classes.rightIcon} />
-      </Fab>
-        
-        )}
-      </CardActions>
+      <CardActions>{deleteButton(checked, classes)}</CardActions>
     </Card>
   );
 }

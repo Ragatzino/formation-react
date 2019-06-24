@@ -11,12 +11,9 @@ import InputBase from "@material-ui/core/InputBase";
 export default function Core() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    checkedA: true
+    checkedA: false
   });
 
-  const handleChange = name => event => {
-    setState({ ...state, [name]: event.target.checked });
-  };
   return (
     <Container>
       <Paper className={classes.paper}>
