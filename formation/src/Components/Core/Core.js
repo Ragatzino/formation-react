@@ -8,12 +8,9 @@ import Fab from "@material-ui/core/Fab";
 import Add from "@material-ui/icons/Add";
 import Search from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
+import Grid from '@material-ui/core/Grid';
 export default function Core() {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    checkedA: false
-  });
-
   return (
     <Container>
       <Paper className={classes.paper}>
@@ -33,23 +30,46 @@ export default function Core() {
             inputProps={{ "aria-label": "Search" }}
           />
         </Fab>
+        <Grid Container spacing ={2}>
+        <Grid item xs={6} className={classes.gridItem}><PoneyCard className={classes.PoneyCard} /></Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        </Grid>
+        <Grid Container spacing ={2}>
+        <Grid item xs={6} className={classes.gridItem}><PoneyCard className={classes.PoneyCard} /></Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        </Grid>
+        <Grid Container spacing ={2}>
+        <Grid item xs={6} className={classes.gridItem}><PoneyCard className={classes.PoneyCard} /></Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        </Grid>
+        <Grid Container spacing ={2}>
+        <Grid item xs={6} className={classes.gridItem}><PoneyCard className={classes.PoneyCard} /></Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        </Grid></Paper>
+        <Grid Container spacing ={2}>
+        <Grid item xs={6} className={classes.gridItem}><PoneyCard className={classes.PoneyCard} /></Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        <Grid item xs={6} className={classes.gridItem}> <PoneyCard className={classes.PoneyCard} /> </Grid>
+        </Grid>
 
-        <PoneyCard className={classes.PoneyCard} />
-        <PoneyCard className={classes.PoneyCard} />
-        <PoneyCard className={classes.PoneyCard} />
-        <PoneyCard className={classes.PoneyCard} />
-        <PoneyCard className={classes.PoneyCard} />
-        <PoneyCard className={classes.PoneyCard} />
-      </Paper>
     </Container>
   );
 }
 
 const useStyles = makeStyles(theme => ({
+  gridItem:{  
+    display:"inline-block",
+    color: theme.palette.text.secondary,
+    padding:20
+},
   PoneyCard: {
     float: "left",
-    display: "inline",
-    width: "35%",
+    display: "inline-block",
+    width: "100%",
     marginBottom: "10px"
   },
   h1: {
