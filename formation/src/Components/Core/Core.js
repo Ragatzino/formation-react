@@ -9,17 +9,39 @@ import Add from "@material-ui/icons/Add";
 import Search from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import Grid from '@material-ui/core/Grid';
+import Switch from '@material-ui/core/Switch'
+import Tooltip from '@material-ui/core/Tooltip'
 export default function Core() {
+  const [state, setState] = React.useState({
+    checkedA: false,
+  });
+
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+  };
+
   const classes = useStyles();
   return (
+    
     <Container>
+      <Tooltip title="Activer la suppression">
+        <Switch
+        className={classes.Switch}
+        checked={state.checkedA}
+        onChange={handleChange('checkedA')}
+        value="checkedA"
+        label="Supprimer"
+        inputProps={{ 'aria-label': 'secondary checkbox' }}
+        labelPlacement="bottom"
+      />   
+           </Tooltip> 
       <Paper className={classes.paper}>
         <h1 className={classes.h1}>Ecurie</h1>
         <Fab variant="extended" aria-label="Add" className={classes.fab}>
           <Add className={classes.extendedIcon} />
           &nbsp; Ajouter un nouveau poney
         </Fab>
-        <Fab variant="extended" className={classes.fab2} disableRipple={true}>
+      <Fab variant="extended" className={classes.fab2} disableRipple={true}>
           <Search className={classes.extendedIcon} />
           <InputBase
             placeholder="Recherchez votre poney"
@@ -61,6 +83,9 @@ export default function Core() {
 }
 
 const useStyles = makeStyles(theme => ({
+  Switch:{
+    float:"top"
+  },
   gridItem:{  
     display:"inline-block",
     color: theme.palette.text.secondary,
