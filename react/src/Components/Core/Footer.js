@@ -1,10 +1,7 @@
 import React from "react";
 
-class Footer extends React.Component {
-  render(){return(
-    <div>
-      <label saisir un texte></label>
-    </div>
-  )
+export default class Footer extends React.Component {
+  render() {
+    return <div>lel</div>;
+  }
 }
-export default Footer;

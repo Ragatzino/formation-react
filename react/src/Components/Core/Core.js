@@ -50,7 +50,7 @@ export default function Core() {
             inputProps={{ "aria-label": "Search" }}
           />
         </Fab>
-        <PoneyGrid />
+        <PoneyGrid checked={true} />
       </Paper>
     </Container>
   );
