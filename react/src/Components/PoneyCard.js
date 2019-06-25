@@ -1,0 +1,62 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Fab from "@material-ui/core/Fab";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 345,
+    marginBottom: 10,
+    marginLeft: 10,
+    display: "inline-block"
+  },
+  media: {
+    height: 140
+  },
+  fab: {
+    float: "right"
+  }
+});
+
+const deleteButton = (checked, classes) => {
+  if (checked) {
+    return (
+      <Fab variant="contained" color="primary" className={classes.fab}>
+        <DeleteIcon className={classes.rightIcon} />
+      </Fab>
+    );
+  }
+};
+export default function PoneyCard(checked, name, description, src) {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.card}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="https://www.pixelstalk.net/wp-content/uploads/2016/04/MLP-wallpapers-HD-cartoon-fantasy-horses-horse-unicorn.png"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Poney
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>{deleteButton(checked, classes)}</CardActions>
+    </Card>
+  );
+}
